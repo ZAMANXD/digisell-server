@@ -23,7 +23,6 @@ const client = new MongoClient(uri, {
 });
 // client.connect((err) => {
 //   const collection = client.db('test').collection('devices');
-//   // perform actions on the collection object
 
 // console.log(uri)
 
