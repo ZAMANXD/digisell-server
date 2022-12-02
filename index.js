@@ -22,7 +22,6 @@ const client = new MongoClient(uri, {
   serverApi: ServerApiVersion.v1,
 });
 // client.connect((err) => {
-//   const collection = client.db('test').collection('devices');
 
 // console.log(uri)
 
