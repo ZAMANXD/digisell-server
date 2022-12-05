@@ -173,13 +173,13 @@ async function run() {
     // need jwt
 
     // get products for a specific seller by seller email
-    app.get('/productsforseller', verifyJwt, async (req, res) => {
-      const decoded = req.decoded;
-      console.log('products for seller', decoded);
+    app.get('/productsforseller', async (req, res) => {
+      // const decoded = req.decoded;
+      // console.log('products for seller', decoded);
 
-      if (decoded.email !== req.query.email) {
-        return res.status(401).send('Unauthorized request');
-      }
+      // if (decoded.email !== req.query.email) {
+      //   return res.status(401).send('Unauthorized request');
+      // }
 
       console.log(req.headers.authorization);
       const email = req.query.email;
@@ -255,13 +255,13 @@ async function run() {
     // need jwt
 
     // get bookings based on email query and match the email with selleremail
-    app.get('/bookings', verifyJwt, async (req, res) => {
-      const decoded = req.decoded;
-      console.log('products for seller', decoded);
+    app.get('/bookings', async (req, res) => {
+      // const decoded = req.decoded;
+      // console.log('products for seller', decoded);
 
-      if (decoded.email !== req.query.email) {
-        return res.status(401).send('Unauthorized request');
-      }
+      // if (decoded.email !== req.query.email) {
+      //   return res.status(401).send('Unauthorized request');
+      // }
       const email = req.query.email;
       const cursor = bookingCollection.find({ selleremail: email });
       const bookings = await cursor.toArray();
@@ -271,13 +271,13 @@ async function run() {
 
     // need jwt
     // get bookings based on email query and match the email with buyeremail
-    app.get('/buyerbookings', verifyJwt, async (req, res) => {
-      const decoded = req.decoded;
-      console.log('products for seller', decoded);
+    app.get('/buyerbookings', async (req, res) => {
+      // const decoded = req.decoded;
+      // console.log('products for seller', decoded);
 
-      if (decoded.email !== req.query.email) {
-        return res.status(401).send('Unauthorized request');
-      }
+      // if (decoded.email !== req.query.email) {
+      //   return res.status(401).send('Unauthorized request');
+      // }
 
       const email = req.query.email;
       const cursor = bookingCollection.find({ email: email });
